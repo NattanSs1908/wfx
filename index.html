@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pequenos Momentos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        header h1 {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #fff;
+            text-shadow: 2px 2px 4px #000;
+            position: relative;
+            z-index: 1;
+        }
+        .background-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            z-index: 0;
+            background-size: cover;
+            background-position: center;
+            animation: slideShow 15s infinite;
+        }
+        @keyframes slideShow {
+            0% { background-image: url('perfil.png'); }
+            33% { background-image: url('perfil2.png'); }
+            66% { background-image: url('perfil3.png'); }
+            100% { background-image: url('perfil.png'); }
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background: url('background.png') no-repeat center center;
+            background-size: cover;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .image-gallery img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .message-box {
+            background-color: #ffe4e1;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        footer {
+            background-color: #ff6680;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="background-slider"></div>
+    <h1>Bem-Vinda Gab!</h1>
+</header>
+
+<section>
+    <h2>Você é...</h2>
+    <button class="button" onclick="mostrarElogio()">Clique aqui</button>
+    <p id="elogio" class="message-box"></p>
+</section>
+
+<section>
+    <h2>Obrigado por fazer parte da minha vida</h2>
+    <div class="image-gallery">
+        <img src="https://i.pinimg.com/originals/8d/73/dd/8d73dda587435f61d9b8c912a55c0a56.jpg" alt="Cachorrinho fofo">
+        <p class="message-box">Eu + Você = Felicidade</p>
+        <img src="https://media.discordapp.net/attachments/1197188243528110192/1248995741125447722/export202406081041036173.png?ex=667c1aed&is=667ac96d&hm=eaeba6fc9100f3c2717d605803f084a701b7010d9f01cf53952d18b0bd495b87&=&format=webp&quality=lossless&width=425&height=425" alt="Pôr do sol">
+        <p class="message-box">Bonito né? Não chega nem aos pés do quanto você é linda</p>
+        <img src="https://www.quer-cafe.com/wp-content/uploads/2022/10/Untitled-design-2022-10-31T174854.662.jpg" alt="Paisagem bonita">
+        <p class="message-box">Só não é mais maravilhoso que você</p>
+        <img src="https://th.bing.com/th/id/R.0fbbb0305ede9d4542d65402be29985f?rik=WuqCJE%2fmZAYATg&pid=ImgRaw&r=0" alt="Paisagem bonita">
+        <p class="message-box">O dicionário nunca esteve tão errado</p>
+    </div>
+</section>
+
+<section>
+    <h2>Curiosidades Sobre Você</h2>
+    <p class="message-box">Sabia que seu sorriso tem o poder de melhorar o dia de qualquer pessoa?</p>
+    <p class="message-box">Você tem um talento incrível para fazer qualquer momento se tornar especial.</p>
+    <p class="message-box">Eu nunca amei uma pessoa tanto quanto eu amo você.</p>
+    <p class="message-box">Você é a pessoa mais maravilhosa do mundo.</p>
+</section>
+
+<section>
+    <h2>Mensagens Diárias</h2>
+    <p class="message-box" id="mensagem-diaria">Obrigado por fazer parte da minha vida.</p>
+</section>
+
+<section>
+    <h2>Sobre Você</h2>
+    <button class="button" onclick="tocarMusica()">Play</button>
+    <audio id="audio" src="music.mp3"></audio>
+</section>
+
+<section>
+    <h2>Quiz</h2>
+    <div class="quiz-question">
+        <p>Pergunta: Você tem um mapa?</p>
+        <button class="button" onclick="mostrarResposta('resposta1', 'Acho que me perdi no brilho do seu sorriso')">Sim</button>
+        <button class="button" onclick="mostrarResposta('resposta1', 'Acho que me perdi no brilho do seu sorriso')">Não</button>
+        <p id="resposta1" class="message-box"></p>
+    </div>
+    <div class="quiz-question">
+        <p>Pergunta: Seu nome é Google?</p>
+        <button class="button" onclick="mostrarResposta('resposta2', 'Porque você tem tudo o que eu procuro.')">Sim</button>
+        <button class="button" onclick="mostrarResposta('resposta2', 'Porque você tem tudo o que eu procuro.')">Não</button>
+        <p id="resposta2" class="message-box"></p>
+    </div>
+    <div class="quiz-question">
+        <p>Pergunta: Tinha dois ursinhos, o Tigo e o Migo. Se eu ficar com Tigo, você fica com Migo?</p>
+        <button class="button" onclick="mostrarResposta('resposta3', 'Se beleza fosse tempo, você seria a eternidade.')">Sim</button>
+        <button class="button" onclick="mostrarResposta('resposta3', 'Se beleza fosse tempo, você seria a eternidade.')">Não</button>
+        <p id="resposta3" class="message-box"></p>
+    </div>
+    <div class="quiz-question" id="ultimate-question">
+        <p>Pergunta: Licença, por acaso você é a pessoa mais maravilhosa do mundo?</p>
+        <button id="sim-button" class="button" onclick="mostrarRespostaFinal()">Sim</button>
+        <button id="nao-button" class="button" onclick="trocarBotoes()">Não</button>
+        <p id="resposta-final" class="message-box"></p>
+    </div>
+</section>
+
+<footer>
+    Obrigado por visitar este pequeno espaço que fiz com muito carinho para você. Espero que tenha gostado!
+</footer>
+
+<script>
+    function mostrarElogio() {
+        const elogios = [
+            "Brilhante", "Encantadora", "Inteligente", "Linda", "Forte", "Gentil", "Talentosa", "Inspiradora", 
+            "Carinhosa", "Elegante", "Criativa", "Generosa", "Determinada", "Alegre", "Sábia", "Corajosa", 
+            "Amável", "Autêntica", "Fascinante", "Graciosa", "Admirável", "Incrível", "Doce", "Radiante", 
+            "Única", "Vibrante", "Sensacional", "Maravilhosa", "Deslumbrante", "Especial", "Poderosa", 
+            "Cativante", "Sofisticada", "Amigável", "Humilde", "Positiva", "Apaixonante", "Carismática", 
+            "Brava", "Destemida", "Notável", "Bonita", "Verdadeira", "Magnífica", "Afetuosa"
+        ];
+        const randomIndex = Math.floor(Math.random() * elogios.length);
+        document.getElementById("elogio").innerText = elogios[randomIndex];
+    }
+
+    function tocarMusica() {
+        const audio = document.getElementById("audio");
+        audio.play();
+    }
+
+    function mostrarResposta(id, mensagem) {
+        document.getElementById(id).innerText = mensagem;
+    }
+
+    function mostrarRespostaFinal() {
+        document.getElementById("resposta-final").innerText = "Certa Resposta!";
+    }
+
+    function trocarBotoes() {
+        const simButton = document.getElementById("sim-button");
+        const naoButton = document.getElementById("nao-button");
+
+        if (naoButton.innerText === "Não") {
+            naoButton.innerText = "Sim";
+            simButton.innerText = "Não";
+        } else {
+            simButton.innerText = "Sim";
+        }
+
+        [simButton.style.order, naoButton.style.order] = [naoButton.style.order, simButton.style.order];
+    }
+</script>
+
+</body>
+</html>
